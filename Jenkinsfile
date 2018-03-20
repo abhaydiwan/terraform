@@ -9,6 +9,7 @@ node {
         )
    
    stage name: 'plan', concurrency: 1
+         sh "terraform init"
         sh "terraform plan --out plan"
 
    stage name: 'deploy', concurrency: 1
