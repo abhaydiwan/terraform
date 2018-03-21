@@ -13,5 +13,5 @@ node {
         sh "terraform plan --lock=false --out plan"
 
    stage name: 'deploy', concurrency: 1
-        sh "terraform apply"
+        sh "terraform apply --lock=false"
 }
