@@ -10,8 +10,8 @@ node {
    
    stage name: 'plan', concurrency: 1
          sh "terraform init --lock=false"
-        sh "terraform plan --out plan"
+        sh "terraform plan --lock=false --out plan"
 
    stage name: 'deploy', concurrency: 1
-        sh "terraform apply plan"
+        sh "terraform apply"
 }
